@@ -45,6 +45,8 @@ python -c "import torch; print(torch.__version__); print(torch.cuda.is_available
 
 В репозитории уже есть готовый пример: `example_dataset.json`.
 
+Рекомендации по расширению датасета (чтобы меньше галлюцинаций): `DATASET_GUIDE.md`.
+
 Поддерживаются `.json` и `.jsonl` в форматах:
 - `{"text": "..."}`
 - `{"instruction": "...", "output": "..."}`
@@ -80,6 +82,17 @@ python .\fine_tuning\train.py --model_name "sshleifer/tiny-gpt2" --dataset_path 
 
 ```powershell
 python .\inference\chat.py --base_model "microsoft/DialoGPT-small" --lora_model ".\fine_tuning\lora_model_cpu"
+```
+
+## Рекомендуемый запуск (RAG + консультантский промпт)
+
+```bash
+python3 inference/chat.py \
+  --base_model "ai-forever/rugpt3small_based_on_gpt2" \
+  --lora_model "fine_tuning/lora_rugpt3small_v2" \
+  --dataset_path "example_dataset.json" \
+  --retrieval_k 5 \
+  --system_prompt "Ты инженер-консультант по инженерным системам частных домов. Если не хватает данных — задай 2-5 уточняющих вопросов. Не выдумывай адреса/телефоны/точные цены/сроки — если данных нет, так и скажи и попроси вводные."
 ```
 
 ## Что важно знать
