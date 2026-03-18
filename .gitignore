@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Модели и данные
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+lora_model/
+*.jsonl
+
+# Логи и кэш
+logs/
+*.log
+.cache/
+.huggingface/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Временные файлы
+*.tmp
+*.temp
