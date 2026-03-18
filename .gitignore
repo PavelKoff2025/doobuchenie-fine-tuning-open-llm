@@ -16,7 +16,16 @@ models/
 *.pt
 *.pth
 *.ckpt
-lora_model/
+**/lora_model*/
+fine_tuning/**/checkpoint-*/
+fine_tuning/**/trainer_state.json
+fine_tuning/**/optimizer.pt
+fine_tuning/**/scheduler.pt
+fine_tuning/**/rng_state.pth
+fine_tuning/**/training_args.bin
+fine_tuning/**/events.out.tfevents*
+fine_tuning/tmp_*/
+fine_tuning/lora_*/
 *.jsonl
 
 # Логи и кэш
